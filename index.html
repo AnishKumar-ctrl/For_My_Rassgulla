@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Rassgulla - Vaishnavi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #5a3d5c;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Modern Cute Navigation */
+.romantic-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: #d63384;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.2);
+    transition: all 0.3s;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+}
+
+.cute-nav-toggle {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4081, #9d4edd);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cute-nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: white;
+    margin: 4px auto;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.cute-nav-items {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #9d4edd;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.nav-item:hover::before {
+    left: 100%;
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    color: #ff4081;
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #ff4081, #9d4edd);
+    color: white;
+    box-shadow: 0 6px 15px rgba(214, 51, 132, 0.3);
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+}
+
+.floating-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    animation: floatUp 0.5s ease-out;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.floating-nav-items {
+    display: flex;
+    gap: 5px;
+}
+
+.floating-nav-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #9d4edd;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-nav-item:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: #ff4081;
+    color: white;
+    box-shadow: 0 8px 16px rgba(255, 64, 129, 0.3);
+}
+
+.floating-nav-item.active {
+    background: linear-gradient(135deg, #ff4081, #9d4edd);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.floating-nav-item span {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4081;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.floating-nav-item:hover span {
+    opacity: 1;
+}
+
+.page {
+    display: none;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    animation: fadeIn 0.8s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    color: #d63384;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #9d4edd;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 64, 129, 0.7);
+    font-size: 24px;
+    opacity: 0;
+    animation: heartFloat 10s infinite linear;
+}
+
+.names-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.name-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    transition: transform 0.5s;
+    flex: 1;
+    text-align: center;
+}
+
+.name-box:hover {
+    transform: translateY(-10px);
+}
+
+.name-box h3 {
+    font-size: 1.8rem;
+    color: #d63384;
+    margin-bottom: 5px;
+}
+
+.name-box p {
+    font-size: 1.2rem;
+    color: #9d4edd;
+    font-style: italic;
+}
+
+.heart-icon {
+    font-size: 2.5rem;
+    color: #ff4081;
+    animation: heartbeat 1.2s infinite;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.message-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff4081, #9d4edd);
+}
+
+.message-box h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #d63384;
+    margin-bottom: 25px;
+}
+
+.message-box p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #9d4edd;
+    margin-top: 30px;
+}
+
+/* Memory Pages */
+.memory-page {
+    display: none;
+}
+
+.memory-page.active {
+    display: block;
+}
+
+.back-button {
+    background: linear-gradient(135deg, #ff4081, #9d4edd);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 30px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.4);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    position: relative;
+    height: 300px;
+    cursor: pointer;
+}
+
+.memory-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.memory-img {
+    height: 70%;
+    background: linear-gradient(45deg, #ffc3a0, #ffafbd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: white;
+}
+
+.memory-text {
+    padding: 20px;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.memory-text h4 {
+    color: #d63384;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.counter-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+    flex: 1;
+}
+
+.counter-box:hover {
+    transform: scale(1.05);
+}
+
+.counter {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.counter-label {
+    font-size: 1.2rem;
+    color: #9d4edd;
+}
+
+.promises-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.promise-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.promise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.promise-card i {
+    font-size: 2.5rem;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.promise-card h4 {
+    font-size: 1.5rem;
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.album-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-frame {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ff4081;
+    cursor: pointer;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+}
+
+/* Fullscreen Image Viewer */
+.fullscreen-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fullscreen-viewer.active {
+    display: flex;
+    opacity: 1;
+    animation: viewerFadeIn 0.5s ease;
+}
+
+@keyframes viewerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fullscreen-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: contentScaleIn 0.5s ease;
+}
+
+@keyframes contentScaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fullscreen-icon {
+    font-size: 15vw;
+    color: white;
+    text-shadow: 0 0 30px rgba(255, 64, 129, 0.7);
+    animation: iconPulse 2s infinite alternate;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+}
+
+.close-viewer:hover {
+    background: #d63384;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.viewer-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.viewer-nav button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.viewer-nav button:hover {
+    background: #ff4081;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-heart {
+    font-size: 2rem;
+    color: #ff4081;
+    margin: 20px 0;
+    animation: float 3s infinite ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 3.8rem;
+    }
+    
+    .message-box h2 {
+        font-size: 2.8rem;
+    }
+    
+    .names-container {
+        gap: 20px;
+    }
+    
+    .promises-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .cute-nav-toggle {
+        display: block;
+    }
+    
+    .cute-nav-items {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 1000;
+        animation: slideIn 0.5s ease;
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    .cute-nav-items.active {
+        display: flex;
+    }
+    
+    .nav-item {
+        width: 80%;
+        max-width: 300px;
+        justify-content: center;
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+    
+    .floating-nav {
+        display: flex;
+    }
+    
+    .page {
+        padding-bottom: 120px;
+    }
+    
+    .fullscreen-icon {
+        font-size: 20vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .page {
+        padding-top: 90px;
+    }
+    
+    .names-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .name-box {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .message-box {
+        padding: 25px;
+    }
+    
+    .message-box h2 {
+        font-size: 2.5rem;
+    }
+    
+    .message-box p {
+        font-size: 1.1rem;
+    }
+    
+    .gallery, .album-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .counters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .counter-box {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .promises-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-nav {
+        bottom: 20px;
+        padding: 10px;
+    }
+    
+    .floating-nav-item {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .fullscreen-icon {
+        font-size: 25vw;
+    }
+    
+    .close-viewer {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .viewer-nav button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .message-box {
+        padding: 20px;
+    }
+    
+    .message-box h2 {
+        font-size: 2.2rem;
+    }
+    
+    .gallery, .album-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-card {
+        height: 280px;
+    }
+    
+    .nav-logo {
+        font-size: 1.8rem;
+        padding: 8px 15px;
+    }
+    
+    .floating-nav {
+        bottom: 15px;
+    }
+    
+    .floating-nav-item {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .fullscreen-icon {
+        font-size: 30vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .name-box {
+        padding: 15px 25px;
+    }
+    
+    .name-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .counter-box {
+        padding: 20px;
+    }
+    
+    .counter {
+        font-size: 2.8rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.5rem;
+        padding: 6px 12px;
+    }
+    
+    .photo-frame {
+        height: 200px;
+        font-size: 3rem;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .page {
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+    
+    .title {
+        font-size: 3rem;
+        margin-bottom: 5px;
+    }
+    
+    .message-box {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .memory-card {
+        height: 250px;
+    }
+    
+    .cute-nav-items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .nav-item {
+        width: auto;
+        min-width: 150px;
+    }
+    
+    .floating-nav {
+        bottom: 10px;
+    }
+    
+    .fullscreen-icon {
+        font-size: 15vh;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1800px;
+    }
+    
+    .title {
+        font-size: 5.5rem;
+    }
+    
+    .message-box h2 {
+        font-size: 4rem;
+    }
+    
+    .message-box p {
+        font-size: 1.6rem;
+    }
+    
+    .nav-item {
+        font-size: 1.3rem;
+        padding: 15px 30px;
+    }
+    
+    .nav-logo {
+        font-size: 2.8rem;
+        padding: 15px 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts-container"></div>
+    
+    <!-- Fullscreen Image Viewer -->
+    <div class="fullscreen-viewer" id="fullscreen-viewer">
+        <button class="close-viewer" id="close-viewer">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="fullscreen-content">
+            <div class="fullscreen-icon" id="fullscreen-icon"></div>
+        </div>
+        <div class="viewer-nav">
+            <button id="prev-photo"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-photo"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    
+    <nav class="romantic-nav">
+        <div class="nav-content">
+            <div class="nav-logo">For My Rassgulla</div>
+            
+            <button class="cute-nav-toggle" id="cute-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="cute-nav-items" id="cute-nav-items">
+                <a href="#" class="nav-item active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" data-page="love-letter">
+                    <i class="fas fa-heart"></i>
+                    <span>Love Letter</span>
+                </a>
+                <a href="#" class="nav-item" data-page="memories">
+                    <i class="fas fa-images"></i>
+                    <span>Memories</span>
+                </a>
+                <a href="#" class="nav-item" data-page="promises">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Promises</span>
+                </a>
+                <a href="#" class="nav-item" data-page="album">
+                    <i class="fas fa-book-heart"></i>
+                    <span>Our Album</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="floating-nav" id="floating-nav">
+        <div class="floating-nav-items">
+            <a href="#" class="floating-nav-item active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="floating-nav-item" data-page="love-letter">
+                <i class="fas fa-heart"></i>
+                <span>Love</span>
+            </a>
+            <a href="#" class="floating-nav-item" data-page="memories">
+                <i class="fas fa-images"></i>
+                <span>Memories</span>
+            </a>
+            <a href="#" class="floating-nav-item" data-page="promises">
+                <i class="fas fa-hand-holding-heart"></i>
+                <span>Promises</span>
+            </a>
+            <a href="#" class="floating-nav-item" data-page="album">
+                <i class="fas fa-book-heart"></i>
+                <span>Album</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Main Pages -->
+        <div class="page active" id="home">
+            <header>
+                <h1 class="title">For My Rassgulla</h1>
+                <p class="subtitle">A journey of love with my beautiful wife, Vaishnavi</p>
+                
+                <div class="names-container">
+                    <div class="name-box">
+                        <h3>Vaishnavi</h3>
+                        <p>My beautiful wife</p>
+                    </div>
+                    
+                    <div class="heart-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <div class="name-box">
+                        <h3>Anish</h3>
+                        <p>Your loving husband</p>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="message-box">
+                <h2>Welcome My Love</h2>
+                <p>This website is a digital expression of my endless love for you, my dear Vaishnavi. Every page here holds a piece of my heart and memories of our beautiful journey together.</p>
+                <p>You are my Rassgulla, my Vasu, my everything. Through this website, I want to show you how much you mean to me, today and always.</p>
+                <p>Use the navigation above to explore different sections - each one dedicated to a different aspect of our love story.</p>
+                <div class="signature">With all my love,<br>Anish</div>
+            </div>
+            
+            <div class="counters">
+                <div class="counter-box">
+                    <div class="counter" id="love-days">0</div>
+                    <div class="counter-label">Days of Love</div>
+                </div>
+                
+                <div class="counter-box">
+                    <div class="counter" id="smiles-count">0</div>
+                    <div class="counter-label">Smiles Shared</div>
+                </div>
+                
+                <div class="counter-box">
+                    <div class="counter">∞</div>
+                    <div class="counter-label">Love for You</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="love-letter">
+            <h1 class="title">My Love Letter</h1>
+            <p class="subtitle">Words from my heart to yours</p>
+            
+            <div class="message-box">
+                <h2>My Dearest Vasu,</h2>
+                <p>From the moment you came into my life, everything changed for the better. Your smile brightens my darkest days, your laughter is my favorite melody, and your love is the greatest gift I've ever received.</p>
+                <p>I call you Rassgulla because you're sweet, delightful, and you make my life complete with your presence. Just like the perfect sweetness of a rassgulla, you bring the perfect balance of joy and love into my world.</p>
+                <p>Every day with you feels like a beautiful dream that I never want to wake up from. Your kindness, your strength, and your beautiful soul inspire me to be a better man. I promise to cherish you, respect you, and love you more with each passing day.</p>
+                <p>This website is a small token of my immense love for you. A place where I can express what I sometimes find hard to say in words.</p>
+                <div class="signature">Forever yours,<br>Anish</div>
+            </div>
+            
+            <div class="message-box">
+                <h2>Why I Love You</h2>
+                <p>I love the way your eyes light up when you talk about things you're passionate about.</p>
+                <p>I love how you always know what to say to make me feel better when I'm down.</p>
+                <p>I love your strength and resilience in facing life's challenges.</p>
+                <p>I love your kindness towards everyone around you.</p>
+                <p>I love how you make our house feel like a home.</p>
+                <p>Most of all, I love you for being you - my perfect Vaishnavi.</p>
+            </div>
+        </div>
+        
+        <div class="page" id="memories">
+            <h1 class="title">Our Memories</h1>
+            <p class="subtitle">Precious moments we've shared together</p>
+            
+            <div class="gallery">
+                <div class="memory-card" data-memory="1">
+                    <div class="memory-img">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Start of Our Love Life</h4>
+                        <p>Click to read about it</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card" data-memory="2">
+                    <div class="memory-img">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Our First Kiss</h4>
+                        <p>Click to read about our special day</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card" data-memory="3">
+                    <div class="memory-img">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Our First Hug</h4>
+                        <p>Click to read about it</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card" data-memory="4">
+                    <div class="memory-img">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Your Absence</h4>
+                        <p>Click to read about it</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card" data-memory="5">
+                    <div class="memory-img">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Our Fights</h4>
+                        <p>Click to read about it</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card" data-memory="6">
+                    <div class="memory-img">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="memory-text">
+                        <h4>Special Moments</h4>
+                        <p>Click to read about cherished memories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memory Pages -->
+        <div class="memory-page" id="memory-1">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Start of Our Love Life</h2>
+                <p>My Dearest Vasu,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+Every love has a beginning, and ours began quietly—through words on a screen, on a random Snapchat chat 🌙📱. July 20th, 2025 didn’t look extraordinary to the world, but it changed everything for me 💫. What started as simple conversations slowly turned into comfort, then laughter, then something my heart recognized before I did 🤍.
+
+Somewhere between late replies and endless chats, I fell for you—naturally, deeply, without force 🌱❤️. Distance didn’t weaken us; it revealed us. Your words became my favorite place, your presence my daily peace 🕊️✨.
+
+That day marked the start of our love life, Vasu—not with grand gestures, but with honesty, connection, and choice 💖.
+
+If love can begin anywhere, ours proved it can begin even online—and still become the most real thing in my life 🌍💌.</p>
+                <div class="signature">Forever grateful,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="memory-page" id="memory-2">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Our First Kiss</h2>
+                <p>My Beautiful Wife,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+Some love stories begin with noise. Ours began with stillness. January 1st, 2026 now lives inside me like a sacred memory 📜💫. Our first kiss wasn’t a moment of haste—it was a moment of certainty. Two hearts pausing, the world holding its breath, destiny quietly nodding 🌙🤍.
+
+When I looked at you, time softened. Everything felt aligned, as if life itself approved of us 🕊️❤️. That kiss didn’t just touch my lips—it rewrote my existence. You are not just someone I love, Vasu… you are the reason my days feel worth living 🌱💖.
+
+Attachment I: your presence, turning silence into poetry ✨
+Attachment II: your smile, giving my life direction ☀️
+Attachment III: that unspoken promise that lives between us 💌
+
+If love were ever documented, Vasu, you wouldn’t be a scene.
+You would be the reason the story exists 🎥🤍.</p>
+                <div class="signature">Your loving husband,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="memory-page" id="memory-3">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Our First Hug</h2>
+                <p>My Dearest Vasu,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+That same day, before words learned how to express us, there was our first hug 🫶🌙. And in that quiet closeness, I felt something settle inside me forever. When you leaned into me, the world disappeared, and safety found a name 🍃❤️.
+
+That hug wasn’t just warmth—it was reassurance. It told me I belonged, that I was chosen, that I was no longer alone 🕊️💫. In your arms, my chaos rested, my fears quieted, and my heart finally exhaled 🤍.
+
+Attachment I: your heartbeat, steadying my soul 🌊
+Attachment II: your calm, holding me together ✨
+Attachment III: the feeling of home I never knew I was missing 💌
+
+If someone ever asks me when love became real,
+I will think of that hug—and of you—and I will know ❤️✨.</p>
+                <div class="signature">Your partner in building dreams,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="memory-page" id="memory-4">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Your Absence</h2>
+                <p>My Adventure Partner,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+Your absence is never loud, yet it changes everything 🌙. When you’re not around, the days move slower, and even the smallest things feel incomplete. It’s strange how silence carries your name, how ordinary moments wait for you without realizing it 🍃💭.
+
+I don’t feel empty when you’re gone—I feel aware. Aware of how deeply you’ve become part of my life 💫. Your absence reminds me of your value, of how much comfort your presence brings, of how naturally you belong in my world 🤍.
+
+Even when distance stands between us, you never truly leave 🕊️❤️. You stay in my thoughts, my routines, my quiet smiles.
+
+Missing you doesn’t weaken me, Vasu.
+It proves how real this love is ✨💖.
+</p>
+                <div class="signature">Your travel companion for life,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="memory-page" id="memory-5">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Our Fights</h2>
+                <p>My Beautiful Vasu,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+Our love isn’t only built on soft moments—it’s shaped in our little fights too 🌧️❤️. You fight, you get upset, you pretend to be strong… and somehow I end up loving you even more. Not because of the fight itself, but because it shows how much you care 💫.
+
+When you argue, I see passion. When you go quiet, I see hurt. And in every disagreement, I see how deeply you’re invested in *us* 🕊️. I don’t love the tension—but I love that you choose to feel, to speak, to stay 🌱🤍.
+
+Our fights don’t push me away, Vasu. They pull me closer. They remind me that this love is real, imperfect, alive ❤️‍🔥.
+
+Because even when we clash, I never stop choosing you. And you—always—you remain my favorite peace ✨💖.
+</p>
+                <div class="signature">Forever your biggest fan,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="memory-page" id="memory-6">
+            <button class="back-button" onclick="switchPage('memories')">
+                <i class="fas fa-arrow-left"></i> Back to Memories
+            </button>
+            
+            <div class="message-box">
+                <h2>Special Moments</h2>
+                <p>My Precious Rassgulla,</p>
+                <p>Vasu, my rasgulla 🤍✨
+
+Our special moments are never loud or dramatic—they are soft, private, and deeply ours 🌙. They live in the way we take care of each other, in quiet gestures that don’t need witnesses 🍃❤️. Holding you close, feeling your head rest against me, reminding each other that we are safe—that is where our love speaks the loudest 💫.
+
+It’s in the small things: checking in, staying a little longer, choosing comfort over pride 🕊️🤍. In those moments, nothing else matters. The world can wait.
+
+Taking care of you feels natural, not like effort. And when you take care of me, I feel understood in ways words could never explain ✨💖.
+
+If love had a shape, Vasu, it would look exactly like us—holding on, protecting, choosing each other every day 🤍🌱.
+</p>
+                <div class="signature">Cherishing every moment with you,<br>Anish</div>
+            </div>
+        </div>
+        
+        <div class="page" id="promises">
+            <h1 class="title">My Promises</h1>
+            <p class="subtitle">Commitments from my heart to yours</p>
+            
+            <div class="promises-container">
+                <div class="promise-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Unconditional Love</h4>
+                    <p>I promise to love you unconditionally, through good times and bad, in sickness and in health.</p>
+                </div>
+                
+                <div class="promise-card">
+                    <i class="fas fa-ear-listen"></i>
+                    <h4>Always Listen</h4>
+                    <p>I promise to always listen to you with patience, understanding, and an open heart.</p>
+                </div>
+                
+                <div class="promise-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Holding Together</h4>
+                    <p>I promise to never let go of you and to never allow you to leave me aswell</p>
+                </div>
+                
+                <div class="promise-card">
+                    <i class="fas fa-laugh-beam"></i>
+                    <h4>Make You Smile</h4>
+                    <p>I promise to make you smile every single day and fill your life with joy and laughter.</p>
+                </div>
+                
+                <div class="promise-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Protect Our Love</h4>
+                    <p>I promise to protect our love and always work on strengthening our bond.</p>
+                </div>
+                
+                <div class="promise-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Grow Together</h4>
+                    <p>I promise to grow with you, learn with you, and build a beautiful future together.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="album">
+            <h1 class="title">Our Digital Album</h1>
+            <p class="subtitle">Click on any picture to view it fullscreen</p>
+            
+            <div class="album-container">
+                <div class="photo-frame" data-photo="1">
+                    <i class="fas fa-heart"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="2">
+                    <i class="fas fa-kiss-wink-heart"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="3">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="4">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="5">
+                    <i class="fas fa-star"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="6">
+                    <i class="fas fa-gem"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="7">
+                    <i class="fas fa-crown"></i>
+                </div>
+                
+                <div class="photo-frame" data-photo="8">
+                    <i class="fas fa-music"></i>
+                </div>
+            </div>
+            
+            <div class="message-box">
+                <h2>Future Memories to Create</h2>
+                <p>This album is just the beginning, my love. I look forward to filling it with countless more memories as we continue our journey together.</p>
+                <p>I dream of traveling the world with you, experiencing new adventures, building our family, and growing old together while our love continues to blossom.</p>
+                <p>Every moment with you is a treasure I cherish, and I can't wait to create a lifetime of beautiful memories with you, my Rassgulla.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>Created with endless love by Anish for his Rassgulla, Vaishnavi</p>
+            <p>© <span id="current-year">2023</span> | A Token of Love</p>
+        </footer>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pages = document.querySelectorAll('.page');
+    const memoryPages = document.querySelectorAll('.memory-page');
+    const navItems = document.querySelectorAll('.nav-item');
+    const floatingNavItems = document.querySelectorAll('.floating-nav-item');
+    const cuteNavToggle = document.getElementById('cute-nav-toggle');
+    const cuteNavItems = document.getElementById('cute-nav-items');
+    const heartsContainer = document.getElementById('hearts-container');
+    const loveDaysElement = document.getElementById('love-days');
+    const smilesCountElement = document.getElementById('smiles-count');
+    const currentYearElement = document.getElementById('current-year');
+    const floatingNav = document.getElementById('floating-nav');
+    const fullscreenViewer = document.getElementById('fullscreen-viewer');
+    const closeViewer = document.getElementById('close-viewer');
+    const fullscreenIcon = document.getElementById('fullscreen-icon');
+    const prevPhotoBtn = document.getElementById('prev-photo');
+    const nextPhotoBtn = document.getElementById('next-photo');
+    const photoFrames = document.querySelectorAll('.photo-frame');
+    const memoryCards = document.querySelectorAll('.memory-card');
+    
+    let isMobile = window.innerWidth <= 992;
+    let lastScrollTop = 0;
+    let currentPhotoIndex = 0;
+    const totalPhotos = 8;
+    const photoIcons = [
+        'fas fa-heart',
+        'fas fa-kiss-wink-heart',
+        'fas fa-user-friends',
+        'fas fa-heartbeat',
+        'fas fa-star',
+        'fas fa-gem',
+        'fas fa-crown',
+        'fas fa-music'
+    ];
+    
+    function createHearts() {
+        const heartCount = 25;
+        
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            
+            const left = Math.random() * 100;
+            const delay = Math.random() * 10;
+            const duration = 10 + Math.random() * 10;
+            const size = 20 + Math.random() * 20;
+            
+            heart.style.left = `${left}vw`;
+            heart.style.fontSize = `${size}px`;
+            heart.style.animationDelay = `${delay}s`;
+            heart.style.animationDuration = `${duration}s`;
+            
+            const colors = ['#ff4081', '#d63384', '#9d4edd', '#ff6b9d'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.color = color;
+            
+            heartsContainer.appendChild(heart);
+        }
+    }
+    
+    function switchPage(pageId) {
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        memoryPages.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        if (pageId.startsWith('memory-')) {
+            document.getElementById(pageId).classList.add('active');
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === 'memories') {
+                    item.classList.add('active');
+                }
+            });
+            
+            floatingNavItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === 'memories') {
+                    item.classList.add('active');
+                }
+            });
+        } else {
+            document.getElementById(pageId).classList.add('active');
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === pageId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            floatingNavItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === pageId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        if (isMobile) {
+            cuteNavItems.classList.remove('active');
+        }
+        
+        if (pageId === 'home') {
+            animateCounters();
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function animateCounters() {
+        const specialDate = new Date('2020-06-15');
+        const today = new Date();
+        const timeDiff = today.getTime() - specialDate.getTime();
+        const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+        
+        let loveDays = 0;
+        const loveDaysInterval = setInterval(() => {
+            loveDaysElement.textContent = loveDays;
+            loveDays += 10;
+            
+            if (loveDays > daysDiff) {
+                loveDaysElement.textContent = daysDiff;
+                clearInterval(loveDaysInterval);
+            }
+        }, 30);
+        
+        let smiles = 0;
+        const smilesInterval = setInterval(() => {
+            smilesCountElement.textContent = smiles;
+            smiles += 50;
+            
+            if (smiles > 10000) {
+                smilesCountElement.textContent = '10000+';
+                clearInterval(smilesInterval);
+            }
+        }, 20);
+    }
+    
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (isMobile) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                floatingNav.style.transform = 'translate(-50%, 100%)';
+                floatingNav.style.opacity = '0';
+            } else {
+                floatingNav.style.transform = 'translate(-50%, 0)';
+                floatingNav.style.opacity = '1';
+            }
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+    
+    function openFullscreenViewer(photoIndex) {
+        currentPhotoIndex = photoIndex;
+        fullscreenIcon.className = photoIcons[photoIndex - 1];
+        fullscreenViewer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeFullscreenViewer() {
+        fullscreenViewer.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        setTimeout(() => {
+            fullscreenViewer.style.display = 'none';
+        }, 500);
+    }
+    
+    function navigatePhoto(direction) {
+        if (direction === 'prev') {
+            currentPhotoIndex = currentPhotoIndex > 1 ? currentPhotoIndex - 1 : totalPhotos;
+        } else {
+            currentPhotoIndex = currentPhotoIndex < totalPhotos ? currentPhotoIndex + 1 : 1;
+        }
+        
+        fullscreenIcon.className = photoIcons[currentPhotoIndex - 1];
+        
+        fullscreenIcon.style.animation = 'none';
+        setTimeout(() => {
+            fullscreenIcon.style.animation = 'iconPulse 2s infinite alternate';
+        }, 10);
+    }
+    
+    function setupEventListeners() {
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                switchPage(pageId);
+            });
+        });
+        
+        floatingNavItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                switchPage(pageId);
+            });
+        });
+        
+        memoryCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const memoryId = this.getAttribute('data-memory');
+                switchPage(`memory-${memoryId}`);
+            });
+        });
+        
+        photoFrames.forEach(frame => {
+            frame.addEventListener('click', function() {
+                const photoId = parseInt(this.getAttribute('data-photo'));
+                openFullscreenViewer(photoId);
+            });
+        });
+        
+        cuteNavToggle.addEventListener('click', function() {
+            cuteNavItems.classList.toggle('active');
+            
+            const spans = this.querySelectorAll('span');
+            if (cuteNavItems.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        closeViewer.addEventListener('click', closeFullscreenViewer);
+        
+        prevPhotoBtn.addEventListener('click', function() {
+            navigatePhoto('prev');
+        });
+        
+        nextPhotoBtn.addEventListener('click', function() {
+            navigatePhoto('next');
+        });
+        
+        fullscreenViewer.addEventListener('click', function(e) {
+            if (e.target === fullscreenViewer) {
+                closeFullscreenViewer();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (fullscreenViewer.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeFullscreenViewer();
+                } else if (e.key === 'ArrowLeft') {
+                    navigatePhoto('prev');
+                } else if (e.key === 'ArrowRight') {
+                    navigatePhoto('next');
+                }
+            }
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!cuteNavToggle.contains(e.target) && !cuteNavItems.contains(e.target)) {
+                cuteNavItems.classList.remove('active');
+                const spans = cuteNavToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+            
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.style.left = `${e.pageX}px`;
+            heart.style.top = `${e.pageY}px`;
+            heart.style.position = 'fixed';
+            heart.style.fontSize = '30px';
+            heart.style.color = '#ff4081';
+            heart.style.animation = 'heartFloat 5s forwards';
+            heart.style.zIndex = '1000';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        });
+        
+        window.addEventListener('resize', function() {
+            isMobile = window.innerWidth <= 992;
+            
+            if (!isMobile) {
+                cuteNavItems.classList.remove('active');
+                const spans = cuteNavToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+                
+                floatingNav.style.transform = 'translate(-50%, 0)';
+                floatingNav.style.opacity = '1';
+            }
+        });
+        
+        window.addEventListener('scroll', handleScroll);
+    }
+    
+    function initializePage() {
+        createHearts();
+        animateCounters();
+        setupEventListeners();
+        currentYearElement.textContent = new Date().getFullYear();
+        
+        if (isMobile) {
+            floatingNav.style.display = 'flex';
+        }
+        
+        document.getElementById('home').classList.add('active');
+    }
+    
+    initializePage();
+});
+    </script>
+</body>
+</html>
